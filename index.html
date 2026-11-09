@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="th" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wuttipat Panphuang | SPU ICT Portfolio</title>
+  <meta name="description" content="Portfolio of Wuttipat Panphuang - 2nd Year ICT Student at Sripatum University, Full-Stack Web Developer" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+              950: '#083344',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Cyber Bento Styles -->
+  <link rel="stylesheet" href="css/style.css?v=2.4" />
+</head>
+<body class="bg-grid-dots-dark text-slate-800 dark:text-slate-100 min-h-screen relative selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden transition-colors duration-300">
+
+  <!-- Ambient Glowing Background Neon Blobs -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-[140px] animate-blob-cyan"></div>
+    <div class="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-[140px] animate-blob-emerald"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[450px] h-[450px] bg-sky-500/10 dark:bg-sky-500/10 rounded-full blur-[140px]"></div>
+  </div>
+
+  <!-- ==========================================================
+       รูปแบบที่ 2: FLOATING ISLAND NAVIGATION BAR (Top Floating Nav)
+       ========================================================== -->
+  <header class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 max-w-5xl mx-auto pointer-events-none">
+    <div class="floating-navbar rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto shadow-2xl backdrop-blur-2xl">
+      <!-- Brand & Online Indicator -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center text-slate-950 font-black text-sm shadow-md shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+          ⚡
+        </div>
+        <div>
+          <span class="font-black text-xs sm:text-sm tracking-tight text-slate-900 dark:text-white block leading-none">
+            WUTTIPAT<span class="text-cyan-500">.DEV</span>
+          </span>
+          <span class="text-[10px] font-semibold text-emerald-500 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            SPU ICT 2nd Yr
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Items -->
+      <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300" id="desktop-nav">
+        <a href="#hero" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all nav-link-active" data-i18n="nav.profile">ข้อมูลส่วนตัว</a>
+        <a href="#education" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all" data-i18n="nav.education">ประวัติการศึกษา</a>
+        <a href="#skills" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all" data-i18n="nav.skills">ทักษะ</a>
+        <a href="#experience" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all" data-i18n="nav.experience">ประสบการณ์</a>
+        <a href="#projects" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all" data-i18n="nav.projects">ผลงาน</a>
+        <a href="#certifications" class="site-nav-link px-3.5 py-1.5 rounded-full hover:text-cyan-500 hover:bg-cyan-500/10 transition-all" data-i18n="nav.certifications">ใบรับรอง</a>
+      </nav>
+
+      <!-- Right Controls: [TH / EN], Theme Switcher, Resume, Mobile Menu -->
+      <div class="flex items-center gap-2">
+        <!-- BILINGUAL LANGUAGE SWITCHER [TH / EN] -->
+        <button class="btn-lang-toggle px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/25 flex items-center gap-1.5 transition-all shadow-sm" title="Toggle Language">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          <span class="lang-label">EN</span>
+        </button>
+
+        <!-- THEME TOGGLE BUTTON -->
+        <button class="btn-theme-toggle p-2 rounded-full text-slate-600 dark:text-slate-300 hover:text-cyan-500 bg-slate-100 dark:bg-white/[0.06] border border-slate-200 dark:border-white/10 transition-all" title="Toggle Theme">
+          <span id="theme-icon-container"><i data-lucide="sun" class="w-4 h-4"></i></span>
+        </button>
+
+        <!-- DOWNLOAD RESUME -->
+        <button onclick="window.print()" class="hidden sm:flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 shadow-md shadow-cyan-500/20 transition-all">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span data-i18n="topbar.downloadCv">Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-400 transition-colors">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Island Menu -->
+    <div id="mobile-nav-menu" class="hidden mt-2 floating-navbar rounded-2xl p-4 shadow-2xl pointer-events-auto border border-cyan-500/20 lg:hidden">
+      <nav class="flex flex-col gap-1 text-xs font-semibold" id="mobile-nav">
+        <a href="#hero" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.profile">ข้อมูลส่วนตัว</a>
+        <a href="#education" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.education">ประวัติการศึกษา</a>
+        <a href="#skills" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.skills">ทักษะ</a>
+        <a href="#experience" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.experience">ประสบการณ์</a>
+        <a href="#projects" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.projects">ผลงาน</a>
+        <a href="#certifications" class="site-nav-link px-4 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400" data-i18n="nav.certifications">ใบรับรอง</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (Full Width Centered Layout) -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-20 space-y-24">
+
+    <!-- ==========================================================
+         SECTION 1: 👤 PERSONAL DETAILS & HERO (Modern Bento Grid Matrix)
+         ========================================================== -->
+    <section id="hero" class="scroll-mt-32">
+      <!-- Bento Grid Wrapper -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        
+        <!-- BENTO BOX 1: Main Profile Hero Card (Span 8) -->
+        <div class="md:col-span-8 bento-card rounded-3xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+            <!-- Profile Avatar & Instant Image Uploader -->
+            <div class="relative group flex-shrink-0">
+              <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400 shadow-xl shadow-cyan-500/25">
+                <img 
+                  id="profile-avatar" 
+                  src="assets/profile.png" 
+                  alt="Wuttipat Panphuang" 
+                  class="w-full h-full object-cover rounded-[14px] bg-slate-900 transition-transform duration-300 group-hover:scale-105" 
+                />
+              </div>
+
+              <!-- Instant Photo Change Button Overlay -->
+              <button 
+                id="btn-change-profile-photo"
+                class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm rounded-[14px] flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer p-2 text-center"
+                title="คลิกเพื่อเลือกรูปภาพโปรไฟล์จากเครื่องเพื่อเปลี่ยนรูปได้ทันที"
+              >
+                <i data-lucide="camera" class="w-6 h-6 mb-1 text-cyan-400"></i>
+                <span class="text-xs font-bold" data-i18n="hero.changePhotoBtn">เปลี่ยนรูปโปรไฟล์</span>
+                <span class="text-[10px] text-slate-300 mt-0.5" data-i18n="hero.uploadPhotoHint">คลิกเพื่ออัปโหลด</span>
+              </button>
+              <input type="file" id="profile-file-input" accept="image/*" class="hidden" />
+
+              <!-- Live Online Status Dot -->
+              <div class="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-full bg-slate-900 border border-emerald-500/40 flex items-center gap-1.5 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="text-[10px] font-bold text-emerald-400">ONLINE</span>
+              </div>
+            </div>
+
+            <!-- Profile Info Body -->
+            <div class="text-center sm:text-left space-y-3 flex-1">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-500 dark:text-cyan-400 text-xs font-semibold">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span data-i18n="hero.greeting">สวัสดีครับ, ผมชื่อ</span>
+              </div>
+
+              <h1 id="profile-name" class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+                วุฒิภัทร ปันพวง
+              </h1>
+
+              <p id="profile-role" class="text-base sm:text-lg font-bold text-cyber-gradient">
+                นักศึกษา ICT ชั้นปีที่ 2 & Full-Stack Developer
+              </p>
+
+              <p id="profile-bio" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+                มีความหลงใหลในการพัฒนาระบบเว็บแอปพลิเคชันสมัยใหม่ การจัดการฐานข้อมูล และคลาวด์โซลูชัน พร้อมเรียนรู้เทคโนโลยีใหม่ๆ มุ่งมั่นสร้างสรรค์ผลงานที่มีประสิทธิภาพและตอบโจทย์ผู้ใช้งานจริง
+              </p>
+            </div>
+          </div>
+
+          <!-- Academic Affiliation Badges -->
+          <div class="flex flex-wrap items-center gap-2 pt-6 mt-6 border-t border-slate-200/60 dark:border-white/10">
+            <span class="px-3 py-1 rounded-xl text-xs font-bold bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/25 flex items-center gap-1.5">
+              <i data-lucide="school" class="w-3.5 h-3.5 text-cyan-500"></i>
+              <span data-i18n="hero.university">มหาวิทยาลัยศรีปทุม (SPU)</span>
+            </span>
+            <span class="px-3 py-1 rounded-xl text-xs font-bold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/25 flex items-center gap-1.5">
+              <i data-lucide="code" class="w-3.5 h-3.5 text-teal-500"></i>
+              <span data-i18n="hero.faculty">สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT)</span>
+            </span>
+            <span class="px-3 py-1 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25 flex items-center gap-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-500"></i>
+              <span data-i18n="hero.year">ชั้นปีที่ 2</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- BENTO BOX 2: Cyber Terminal Widget (Span 4) -->
+        <div class="md:col-span-4 bento-card rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between font-mono bg-slate-950 text-slate-300">
+          <div>
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+              </div>
+              <span class="text-[11px] text-slate-500">wuttipat@spu:~</span>
+            </div>
+
+            <!-- Terminal Output -->
+            <div class="space-y-2 text-xs">
+              <div class="text-cyan-400">$ whoami</div>
+              <div class="text-slate-300 pl-3">> Wuttipat Panphuang (ICT Yr.2)</div>
+              
+              <div class="text-cyan-400">$ dev.focus</div>
+              <div class="text-emerald-400 pl-3">> ["Cloudflare", "Next.js", "D1 SQL", "Tailwind"]</div>
+              
+              <div class="text-cyan-400">$ internship.status</div>
+              <div class="text-amber-400 pl-3">> "Ready & Available 🚀"</div>
+            </div>
+          </div>
+
+          <!-- Bottom Terminal Ping -->
+          <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-500">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Cloudflare D1: Connected</span>
+            </span>
+            <span class="text-cyan-400 font-bold">APAC / SPU</span>
+          </div>
+        </div>
+
+        <!-- BENTO BOX 3: GPAX & Academic Excellence (Span 4) -->
+        <div class="md:col-span-4 bento-card rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block" data-i18n="hero.gpaxLabel">เกรดเฉลี่ยสะสม (GPAX)</span>
+              <div class="flex items-baseline gap-2 mt-2">
+                <span id="profile-gpax" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+                  3.78
+                </span>
+                <span class="text-sm font-bold text-slate-400">/ 4.00</span>
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400/20 to-emerald-400/20 text-cyan-500 flex items-center justify-center">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-white/10 flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>ผลการเรียนดีเด่น สาขาวิชา ICT มหาวิทยาลัยศรีปทุม</span>
+          </div>
+        </div>
+
+        <!-- BENTO BOX 4: Key Highlight Metric Stats (Span 4) -->
+        <div class="md:col-span-4 bento-card rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">KEY STATS & ACTIVITY</span>
+          
+          <div class="grid grid-cols-3 gap-3 my-2 text-center">
+            <div class="p-2.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20">
+              <span class="block text-2xl font-black text-cyan-500">4+</span>
+              <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 block mt-0.5" data-i18n="hero.statProjects">โปรเจกต์</span>
+            </div>
+            <div class="p-2.5 rounded-2xl bg-teal-500/10 border border-teal-500/20">
+              <span class="block text-2xl font-black text-teal-500">4+</span>
+              <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 block mt-0.5" data-i18n="hero.statCerts">ใบรับรอง</span>
+            </div>
+            <div class="p-2.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+              <span class="block text-2xl font-black text-emerald-500">18+</span>
+              <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 block mt-0.5" data-i18n="hero.statTechs">สแตกเทค</span>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between pt-2 border-t border-slate-200/60 dark:border-white/10">
+            <span>Specialization:</span>
+            <span class="font-bold text-slate-700 dark:text-slate-300">Modern Web & Cloud</span>
+          </div>
+        </div>
+
+        <!-- BENTO BOX 5: Quick Contact & Matrix (Span 4) -->
+        <div class="md:col-span-4 bento-card rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">GET IN TOUCH</span>
+          
+          <div class="space-y-2.5 my-2 text-xs">
+            <!-- Email -->
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5">
+              <div class="flex items-center gap-2 truncate">
+                <i data-lucide="mail" class="w-4 h-4 text-cyan-500 flex-shrink-0"></i>
+                <a id="profile-email" href="mailto:realwuttipat@gmail.com" class="truncate font-medium hover:text-cyan-400">realwuttipat@gmail.com</a>
+              </div>
+              <button onclick="copyToClipboard('realwuttipat@gmail.com', 'คัดลอกอีเมลแล้ว!')" class="p-1 text-slate-400 hover:text-cyan-400" title="Copy Email">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5">
+              <div class="flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i>
+                <a id="profile-phone" href="tel:0948562103" class="font-medium hover:text-emerald-400">094-856-2103</a>
+              </div>
+              <button onclick="copyToClipboard('094-856-2103', 'คัดลอกเบอร์โทรแล้ว!')" class="p-1 text-slate-400 hover:text-emerald-400" title="Copy Phone">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Socials row -->
+          <div class="pt-2 border-t border-slate-200/60 dark:border-white/10 flex items-center justify-between">
+            <span class="text-xs text-slate-500" id="profile-location">กรุงเทพมหานคร, ประเทศไทย</span>
+            <div class="flex items-center gap-2">
+              <a href="https://github.com/Wuttipat1" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-100 dark:bg-white/5 hover:text-cyan-400 transition-colors" title="GitHub Profile">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+              <a href="https://linkedin.com/in/wuttipat-spu" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-100 dark:bg-white/5 hover:text-cyan-400 transition-colors">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 2: 🎓 EDUCATION (Bento Academic Cards)
+         ========================================================== -->
+    <section id="education" class="scroll-mt-32 space-y-6">
+      <div>
+        <div class="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase">
+          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          <span>ACADEMIC BACKGROUND</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1" data-i18n="education.title">
+          ประวัติการศึกษา
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="education.subtitle">
+          เส้นทางการเรียนรู้และรากฐานด้านเทคโนโลยีสารสนเทศ
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Primary SPU Degree Card (Span 8) -->
+        <div class="md:col-span-8 bento-card rounded-3xl p-7 relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-emerald-400 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-cyan-500/20">
+                <i data-lucide="school" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white" data-i18n="education.institution">
+                  มหาวิทยาลัยศรีปทุม (Sripatum University - SPU)
+                </h3>
+                <p class="text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400" data-i18n="education.degree">
+                  ปริญญาตรี วิทยาศาสตรบัณฑิต (วท.บ.)
+                </p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 whitespace-nowrap self-start" data-i18n="education.period">
+              2566 – ปัจจุบัน (ชั้นปีที่ 2)
+            </span>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-cyan-500/5 dark:bg-white/[0.03] border border-cyan-500/15 mb-5 flex items-center justify-between text-xs sm:text-sm">
+            <span class="font-medium text-slate-700 dark:text-slate-300" data-i18n="education.major">สาขาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT)</span>
+            <span class="font-extrabold text-emerald-500">GPAX: 3.78 / 4.00</span>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3" data-i18n="education.highlightCourseTitle">
+              วิชาเรียนสำคัญที่ผ่านการศึกษา:
+            </h4>
+            <ul id="education-courses-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <!-- Populated via JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Secondary Foundation Card (Span 4) -->
+        <div class="md:col-span-4 bento-card rounded-3xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/[0.08] flex items-center justify-center text-slate-600 dark:text-slate-300 mb-4">
+              <i data-lucide="book-check" class="w-5 h-5 text-cyan-500"></i>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 dark:bg-white/[0.05] text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-white/5" data-i18n="education.highSchool.period">
+              2563 – 2566
+            </span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-800 dark:text-white mt-3" data-i18n="education.highSchool.title">
+              มัธยมศึกษาตอนปลาย (สายวิทย์-คณิต-จีน)
+            </h3>
+            <p class="text-xs text-cyan-600 dark:text-cyan-400 font-semibold mb-2" data-i18n="education.highSchool.institution">
+              โรงเรียนเทพศิรินทร์สมุทรปราการ
+            </p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="education.highSchool.desc">
+              สำเร็จการศึกษาระดับมัธยมศึกษาตอนปลาย แผนการเรียนวิทยาศาสตร์-คณิตศาสตร์-ภาษาจีน พร้อมปูพื้นฐานการคิดเชิงตรรกะและการสื่อสาร
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-white/10">
+            <span class="inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>จบการศึกษาด้วยผลการเรียนดีเด่น</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 3: 🛠️ TECHNICAL SKILLS (4 Cyber Bento Categories)
+         ========================================================== -->
+    <section id="skills" class="scroll-mt-32 space-y-6">
+      <div>
+        <div class="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
+          <span>TECHNICAL PROFICIENCY</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1" data-i18n="skills.title">
+          ทักษะความสามารถ
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="skills.subtitle">
+          เครื่องมือและสแตกเทคโนโลยีที่ใช้งานในการพัฒนา
+        </p>
+      </div>
+
+      <!-- 4 Categorized Cards Grid -->
+      <div id="skills-grid-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 4: 💼 WORK EXPERIENCE (High-Tech Connected Timeline)
+         ========================================================== -->
+    <section id="experience" class="scroll-mt-32 space-y-6">
+      <div>
+        <div class="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          <span>WORK & ACTIVITIES</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1" data-i18n="experience.title">
+          ประสบการณ์ทำงาน
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="experience.subtitle">
+          ข้อมูลประวัติการทำงานในสถานประกอบการ
+        </p>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="relative py-4" id="experience-wrapper">
+        <div id="experience-stem" class="timeline-stem-cyber hidden"></div>
+        <div id="experience-timeline-container" class="space-y-2">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 5: 📁 MY PROJECTS (Dynamic Grid & Image CRUD)
+         ========================================================== -->
+    <section id="projects" class="scroll-mt-32 space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase">
+            <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+            <span>FEATURED WORKS</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1" data-i18n="projects.title">
+            ผลงานของฉัน
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="projects.subtitle">
+            โปรเจกต์ที่พัฒนาขึ้นจริงทั้งงานส่วนตัว งานรายวิชา และระบบจำลอง
+          </p>
+        </div>
+
+        <!-- Add Project Button -->
+        <button id="btn-add-project" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 shadow-lg shadow-cyan-500/25 flex items-center gap-2 transition-all self-start md:self-auto">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span data-i18n="projects.addBtn">เพิ่มผลงานใหม่</span>
+        </button>
+      </div>
+
+      <!-- Filter Buttons: [All], [Full-Stack], [Frontend], [Backend] -->
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <button data-filter="All" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20 transition-all" data-i18n="projects.filterAll">
+          ทั้งหมด
+        </button>
+        <button data-filter="Full-Stack" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-cyan-400 bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-white/10 transition-all" data-i18n="projects.filterFullStack">
+          Full-Stack
+        </button>
+        <button data-filter="Frontend" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-cyan-400 bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-white/10 transition-all" data-i18n="projects.filterFrontend">
+          Frontend
+        </button>
+        <button data-filter="Backend" class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-cyan-400 bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-white/10 transition-all" data-i18n="projects.filterBackend">
+          Backend
+        </button>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div id="projects-grid-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+      <div id="projects-empty-state" class="hidden text-center py-16 bento-card rounded-2xl">
+        <i data-lucide="folder-x" class="w-12 h-12 mx-auto text-slate-400 mb-3"></i>
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium" data-i18n="projects.emptyState">
+          ยังไม่มีผลงานในหมวดหมู่นี้
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 6: 💻 TRAINING & CERTIFICATIONS (PDF Attachment CRUD)
+         ========================================================== -->
+    <section id="certifications" class="scroll-mt-32 space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            <span>CREDENTIALS & WORKSHOPS</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1" data-i18n="certifications.title">
+            การฝึกอบรมและใบรับรอง
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="certifications.subtitle">
+            วุฒิบัตรและหลักสูตรอบรมเพิ่มพูนทักษะ พร้อมเอกสาร PDF ตรวจสอบได้
+          </p>
+        </div>
+
+        <!-- Add Certification Button -->
+        <button id="btn-add-cert" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 shadow-lg shadow-cyan-500/25 flex items-center gap-2 transition-all self-start md:self-auto">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span data-i18n="certifications.addBtn">เพิ่มใบรับรองใหม่</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Certificates Grid -->
+      <div id="certs-grid-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+      <div id="certs-empty-state" class="hidden text-center py-16 bento-card rounded-2xl">
+        <i data-lucide="award" class="w-12 h-12 mx-auto text-slate-400 mb-3"></i>
+        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium" data-i18n="certifications.emptyState">
+          ยังไม่มีใบรับรองในระบบ
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer class="border-t border-slate-200/60 dark:border-white/10 py-10 px-6 text-center text-xs text-slate-500 dark:text-slate-400 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">⚡</div>
+        <span>© 2026 Wuttipat Panphuang. Sripatum University (SPU ICT).</span>
+      </div>
+      <div class="flex items-center gap-3 text-cyan-500 font-semibold">
+        <span>Cyber Bento UI</span>
+        <span>•</span>
+        <span>Tailwind CSS</span>
+        <span>•</span>
+        <span>Cloudflare D1 & Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       MODALS & DIALOGS
+       ========================================================== -->
+
+  <!-- 1. PROJECT CRUD MODAL -->
+  <div id="project-modal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="bento-card w-full max-w-xl rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <h3 id="project-modal-title" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="projects.modalAddTitle">
+          เพิ่มผลงานใหม่
+        </h3>
+        <button onclick="closeProjectModal()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="project-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formTitle">ชื่อโปรเจกต์</label>
+          <input type="text" id="proj-title" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="เช่น SPU Smart Campus Hub" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formCategory">ประเภทโปรเจกต์</label>
+          <select id="proj-category" class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400">
+            <option value="Full-Stack">Full-Stack</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formDescription">คำอธิบายรายละเอียด</label>
+          <textarea id="proj-desc" rows="3" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="อธิบายฟังก์ชันการทำงาน และสถาปัตยกรรมของระบบ..."></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formTech">เทคโนโลยีที่ใช้ (คั่นด้วยจุลภาค)</label>
+          <input type="text" id="proj-tech" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="Tailwind CSS, Node.js, Cloudflare D1" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formDemoUrl">ลิงก์ Live Demo (URL)</label>
+            <input type="url" id="proj-demo" class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="https://demo.example.com" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formRepoUrl">ลิงก์ GitHub Repository (URL)</label>
+            <input type="url" id="proj-repo" class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="https://github.com/..." />
+          </div>
+        </div>
+
+        <!-- Project Image Upload -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="projects.formImage">รูปภาพหน้าปกผลงาน</label>
+          <input type="file" id="proj-image-file" accept="image/*" class="w-full text-xs text-slate-500 dark:text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-cyan-500 file:text-slate-950 hover:file:bg-cyan-400 cursor-pointer" />
+          <img id="proj-image-preview" src="" class="hidden mt-3 h-32 w-full object-cover rounded-xl border border-white/10" alt="Preview" />
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-200/50 dark:border-white/10">
+          <button type="button" onclick="closeProjectModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors" data-i18n="projects.cancelBtn">
+            ยกเลิก
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-lg shadow-cyan-500/25 transition-all" data-i18n="projects.saveBtn">
+            บันทึกข้อมูล
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. CERTIFICATION CRUD MODAL -->
+  <div id="cert-modal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="bento-card w-full max-w-lg rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <h3 id="cert-modal-title" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="certifications.modalAddTitle">
+          เพิ่มใบรับรองใหม่
+        </h3>
+        <button onclick="closeCertModal()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="cert-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="certifications.formTitle">ชื่อหลักสูตร / ใบรับรอง</label>
+          <input type="text" id="cert-title" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="เช่น Cloudflare Workers Specialist" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="certifications.formIssuer">สถาบันหรือองค์กรผู้ออกใบรับรอง</label>
+          <input type="text" id="cert-issuer" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="เช่น Cloudflare, Google Cloud, SPU" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="certifications.formDate">วันที่ได้รับใบรับรอง</label>
+            <input type="date" id="cert-date" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="certifications.formCredentialId">รหัสอ้างอิงใบรับรอง</label>
+            <input type="text" id="cert-cred-id" required class="w-full px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white text-sm focus:outline-none focus:border-cyan-400" placeholder="เช่น CF-90241" />
+          </div>
+        </div>
+
+        <!-- PDF Attachment Input -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="certifications.formPdf">ไฟล์แนบเอกสาร PDF</label>
+          <input type="file" id="cert-pdf-file" accept=".pdf" class="w-full text-xs text-slate-500 dark:text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-cyan-500 file:text-slate-950 hover:file:bg-cyan-400 cursor-pointer" />
+          <div id="cert-pdf-name-display" class="hidden mt-2 text-xs text-emerald-400 font-mono"></div>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-200/50 dark:border-white/10">
+          <button type="button" onclick="closeCertModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors" data-i18n="certifications.cancelBtn">
+            ยกเลิก
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-lg shadow-cyan-500/25 transition-all" data-i18n="certifications.saveBtn">
+            บันทึกข้อมูล
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. PDF VIEWER MODAL -->
+  <div id="pdf-viewer-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-6 hidden">
+    <div class="bento-card w-full max-w-4xl h-[92vh] rounded-3xl p-5 flex flex-col shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200/50 dark:border-white/10">
+        <div class="flex items-center gap-2">
+          <i data-lucide="file-check-2" class="w-5 h-5 text-cyan-400"></i>
+          <h3 id="pdf-viewer-title" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate max-w-md" data-i18n="certifications.pdfModalTitle">
+            พรีวิวเอกสารใบรับรอง (PDF Viewer)
+          </h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="pdf-open-new-tab" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 flex items-center gap-1.5 transition-colors">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>เปิดในแท็บใหม่</span>
+          </button>
+          <button onclick="closePdfModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Iframe / Object Container -->
+      <div id="pdf-viewer-frame-container" class="flex-1 mt-4 rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP CONTAINER -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5 pointer-events-none max-w-sm w-full"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js?v=2.4"></script>
+  <script src="js/translations.js?v=2.4"></script>
+  <script src="js/app.js?v=2.4"></script>
+</body>
+</html>
