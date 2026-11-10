@@ -1,12 +1,13 @@
 # ⚡ Cyber Bento Portfolio - Wuttipat Panphuang (วุฒิภัทร ปันพวง)
 
-[![Live Demo](https://img.shields.io/badge/Demo-wuttipat--ict.pages.dev-06b6d4?style=for-the-badge&logo=cloudflare)](https://wuttipat-ict.pages.dev)
-[![GitHub](https://img.shields.io/badge/GitHub-Wuttipat1-181717?style=for-the-badge&logo=github)](https://github.com/Wuttipat1)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-22c55e?style=for-the-badge&logo=github)](https://wuttipat1.github.io/Portfolio/)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-Live%20Mirror-06b6d4?style=for-the-badge&logo=cloudflare)](https://wuttipat-ict.pages.dev)
 [![SPU ICT](https://img.shields.io/badge/SPU-ICT%20Year%202-10b981?style=for-the-badge)](https://www.spu.ac.th)
 
-เว็บพอร์ตโฟลิโอส่วนตัว (Personal Portfolio) ออกแบบและพัฒนาด้วยสไตล์ **Modern Cyber Bento Grid** ผสาน **Floating Island Navigation** และขอบนีออนเรืองแสง สะท้อนความเป็น Full-Stack Developer รุ่นใหม่ พร้อมระบบจัดการข้อมูลสองภาษา (TH/EN), Dark/Light Mode และเชื่อมต่อ Cloudflare Edge Architecture
+เว็บพอร์ตโฟลิโอส่วนตัว (Personal Portfolio) ออกแบบและพัฒนาด้วยสไตล์ **Modern Cyber Bento Grid** ผสาน **Floating Island Navigation** และขอบนีออนเรืองแสง สะท้อนความเป็น Full-Stack Developer รุ่นใหม่ พร้อมระบบจัดการข้อมูลสองภาษา (TH/EN), Dark/Light Mode
 
-🌐 **Live Website:** [https://wuttipat-ict.pages.dev](https://wuttipat-ict.pages.dev)
+🌐 **Live Website (GitHub Pages):** [https://wuttipat1.github.io/Portfolio/](https://wuttipat1.github.io/Portfolio/)  
+☁️ **Mirror (Cloudflare Pages):** [https://wuttipat-ict.pages.dev](https://wuttipat-ict.pages.dev)
 
 ---
 
